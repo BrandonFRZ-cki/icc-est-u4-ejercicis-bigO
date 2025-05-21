@@ -18,22 +18,40 @@ public class RespuestasOptimizadas {
     }
 
     // 2. Versión optimizada de contarMayores (Complejidad anotada en la variable)
-    public static String contarMayoresComplejidad = ""; // Ej: "O(n)"
+    public static String contarMayoresComplejidad = "O(n)"; // Ej: "O(n)"
 
-    public static int contarMayoresOpt(int[] arr, int x) {
-        // TODO: implementar versión eficiente
-        return 0;
+    public static int contarMayores(int[] arr, int x) {
+        HashSet<Integer> maximos = new HashSet<>();
+        int count = 0;
+        int max = arr[0];
+        
+        for (int num : arr) {
+            if (num > max) {
+                max = num;
+                maximos.add(num);
+            }
+        }
+
+        for (int num : maximos) {
+            if (num > x) {
+                count++;
+            }
+        }
+
+        return count;
     }
 
+
     // 3. Versión optimizada de encontrarMaximo (Complejidad anotada en la variable)
-    public static String encontrarMaximoComplejidad = ""; // Ej: "O(n)"
+    public static String encontrarMaximoComplejidad = "O(n)"; // Ej: "O(n)"
 
     public static int encontrarMaximoOpt(int[] arr) {
-        int temp;
-        for(int i = 0 ; i < arr.length;i++){
-            temp=arr[i];
-            if()
+        int max = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
         }
-        return 0;
+        return max;
     }
 }
